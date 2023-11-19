@@ -124,12 +124,12 @@ int main()
 	MyString str2("456");
 	str2.print();
 
-	/*cout << "_____________________________" << endl;
+	cout << "_____________________________" << endl;
 	
 	str1 = "hello";
 
 	str1.print();
-	str2.print();*/
+	str2.print();
 
 	MyString str3 = str1 + str2;
 	str3.print();
