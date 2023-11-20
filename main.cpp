@@ -4,12 +4,12 @@ using namespace std;
 class MyString
 {
 public:
-	MyString()
+	MyString()//конструктор по умолчанию
 	{
 		str = nullptr;
 	}
 
-	MyString(const char *str)
+	MyString(const char *str)//конструктор для инициализации типа MyString str("123")
 	{
 		int length = strlen(str);
 		this->str = new char[length + 1];
@@ -22,7 +22,7 @@ public:
 		this->str[length] = '\0';
 	}
 
-	MyString(const MyString& other)
+	MyString(const MyString& other)// конструктор копирования 
 	{
 		if (this->str != nullptr)
 		{
@@ -41,12 +41,12 @@ public:
 		this->str[length] = '\0';
 	}
 
-	~MyString()
+	~MyString()// десктруктор
 	{
 		delete[] str;
 	}
 
-	MyString& operator = (const char * str)
+	MyString& operator = (const char * str) // перегруженный оператор = для такой конструкции MyString str1 = "123";
 	{
 		int length = strlen(str);
 
@@ -65,7 +65,7 @@ public:
 		return *this;
 	}
 
-	MyString& operator =(const MyString& other)
+	MyString& operator =(const MyString& other)// перегрузка оператора = для использования в виде str1 = str2;
 	{
 		int length = strlen(other.str);
 
@@ -87,7 +87,7 @@ public:
 		return *this;
 	}
 
-	MyString operator + (const MyString& str2)
+	MyString operator + (const MyString& str2) //перегрузка оператора + для сложения массивов строк
 	{
 		MyString newStr;
 		int length = strlen(this->str) + strlen(str2.str);
@@ -107,7 +107,7 @@ public:
 		return newStr;
 	}
 
-private:
+private://здесь хранятся все массивы char
 	char* str;
 
 public:
