@@ -4,12 +4,13 @@ using namespace std;
 class MyString
 {
 public:
-	MyString()//конструктор по умолчанию
+	MyString()//default constructor
+
 	{
 		str = nullptr;
 	}
 
-	MyString(const char *str)//конструктор для инициализации типа MyString str("123")
+	MyString(const char *str)//initialision constructor (MyString str("123");)
 	{
 		int length = strlen(str);
 		this->str = new char[length + 1];
@@ -22,7 +23,7 @@ public:
 		this->str[length] = '\0';
 	}
 
-	MyString(const MyString& other)// конструктор копирования 
+	MyString(const MyString& other)// copy constructor
 	{
 		if (this->str != nullptr)
 		{
@@ -41,12 +42,12 @@ public:
 		this->str[length] = '\0';
 	}
 
-	~MyString()// десктруктор
+	~MyString()// destructor
 	{
 		delete[] str;
 	}
 
-	MyString& operator = (const char * str) // перегруженный оператор = для такой конструкции MyString str1 = "123";
+	MyString& operator = (const char * str) // overloaded operator =  (MyString str1 = "123";)
 	{
 		int length = strlen(str);
 
@@ -65,7 +66,7 @@ public:
 		return *this;
 	}
 
-	MyString& operator =(const MyString& other)// перегрузка оператора = для использования в виде str1 = str2;
+	MyString& operator =(const MyString& other)// overloaded operator =  (str1 = str2);
 	{
 		int length = strlen(other.str);
 
@@ -87,7 +88,7 @@ public:
 		return *this;
 	}
 
-	MyString operator + (const MyString& str2) //перегрузка оператора + для сложения массивов строк
+	MyString operator + (const MyString& str2) //overloaded operator + 
 	{
 		MyString newStr;
 		int length = strlen(this->str) + strlen(str2.str);
@@ -107,7 +108,7 @@ public:
 		return newStr;
 	}
 
-private://здесь хранятся все массивы char
+private://all arrays of char are stored in this variable
 	char* str;
 
 public:
