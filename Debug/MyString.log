@@ -1,4 +1,2 @@
 ﻿  main.cpp
-D:\c++\проекты\MyString\main.cpp(96,12): warning C4018: <: несоответствие типов со знаком и без знака
-D:\c++\проекты\MyString\main.cpp(101,21): warning C4018: <: несоответствие типов со знаком и без знака
   MyString.vcxproj -> D:\c++\проекты\MyString\Debug\MyString.exe
